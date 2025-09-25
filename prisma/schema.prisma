@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  phone     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  patients Patient[]
+  appointments Appointment[]
+
+  @@map("users")
+}
+
+model Patient {
+  id                        String   @id @default(cuid())
+  userId                    String
+  name                      String
+  email                     String
+  phone                     String
+  birthDate                 DateTime
+  gender                    Gender
+  address                   String
+  occupation                String
+  emergencyContactName      String
+  emergencyContactNumber    String
+  primaryPhysician          String
+  // Removed sensitive fields: insuranceProvider, insurancePolicyNumber, identificationType, identificationNumber, identificationDocumentUrl
+  // Removed medical history fields: allergies, currentMedication, familyMedicalHistory, pastMedicalHistory
+  privacyConsent            Boolean
+  treatmentConsent          Boolean
+  disclosureConsent         Boolean
+  createdAt                 DateTime @default(now())
+  updatedAt                 DateTime @updatedAt
+
+  // Relations
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  appointments Appointment[]
+
+  @@map("patients")
+}
+
+model Appointment {
+  id                String      @id @default(cuid())
+  userId            String
+  patientId         String
+  patientName       String      // Patient name for display
+  primaryPhysician  String
+  schedule          DateTime
+  status            Status      @default(pending)
+  reason            String
+  note              String?
+  cancellationReason String?
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  // Relations
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  patient Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@map("appointments")
+}
+
+enum Gender {
+  Male
+  Female
+  Other
+}
+
+enum Status {
+  pending
+  scheduled
+  cancelled
+}
