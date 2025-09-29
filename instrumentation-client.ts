@@ -30,3 +30,6 @@ Sentry.init({
     }),
   ],
 });
+
+// Export the router transition hook for Sentry
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
