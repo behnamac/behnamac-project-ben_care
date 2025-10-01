@@ -86,6 +86,25 @@ export const PasskeyModal = () => {
           <AlertDialogDescription>
             To access the admin page, please enter the passkey.
           </AlertDialogDescription>
+
+          {/* Test Mode - Show Password */}
+          <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3">
+            <p className="text-sm font-medium text-blue-800">
+              🧪 <strong>Test Mode:</strong> Admin Password is{" "}
+              <code className="rounded bg-blue-100 px-2 py-1 font-mono text-blue-900">
+                111111
+              </code>
+            </p>
+            <p className="mt-1 text-xs text-blue-600">
+              This is displayed for testing purposes only
+            </p>
+            <button
+              onClick={() => setPasskey("111111")}
+              className="mt-2 rounded bg-blue-600 px-3 py-1 text-xs text-white transition-colors hover:bg-blue-700"
+            >
+              Click to Auto-fill Password
+            </button>
+          </div>
         </AlertDialogHeader>
         <div>
           <InputOTP
