@@ -56,13 +56,13 @@ export default function TestPatientPage() {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-dark-300">
+    <div className="min-h-screen bg-dark-300 p-8">
       <div className="mx-auto max-w-2xl">
         <h1 className="mb-6 text-2xl font-bold text-white">
           Test Patient Creation
         </h1>
 
-        <div className="p-6 mb-6 rounded-lg bg-gray-800">
+        <div className="mb-6 rounded-lg bg-gray-800 p-6">
           <h2 className="mb-4 text-lg font-semibold text-white">
             This will create a test patient with:
           </h2>
@@ -77,13 +77,13 @@ export default function TestPatientPage() {
         <button
           onClick={handleCreateTestPatient}
           disabled={loading}
-          className="px-6 py-3 text-white rounded-lg bg-green-600 hover:bg-green-700 disabled:opacity-50"
+          className="rounded-lg bg-green-600 px-6 py-3 text-white hover:bg-green-700 disabled:opacity-50"
         >
           {loading ? "Creating..." : "Create Test Patient"}
         </button>
 
         {result && (
-          <div className="p-4 mt-6 rounded-lg bg-gray-800">
+          <div className="mt-6 rounded-lg bg-gray-800 p-4">
             <pre className="text-sm text-white">{result}</pre>
           </div>
         )}
@@ -92,7 +92,7 @@ export default function TestPatientPage() {
           <h3 className="mb-2 text-lg font-semibold">
             Check the browser console for detailed logs:
           </h3>
-          <ul className="space-y-1 list-disc list-inside">
+          <ul className="list-inside list-disc space-y-1">
             <li>Look for &quot;Creating patient with data:&quot;</li>
             <li>
               Look for &quot;Final patient data being sent to Appwrite:&quot;

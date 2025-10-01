@@ -59,13 +59,13 @@ export default function DebugAppwritePage() {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-dark-300">
+    <div className="min-h-screen bg-dark-300 p-8">
       <div className="mx-auto max-w-4xl">
         <h1 className="mb-6 text-3xl font-bold text-white">
           Appwrite Diagnostic Tool
         </h1>
 
-        <div className="p-6 mb-6 rounded-lg bg-gray-800">
+        <div className="mb-6 rounded-lg bg-gray-800 p-6">
           <h2 className="mb-4 text-xl font-semibold text-white">
             What This Tests:
           </h2>
@@ -80,13 +80,13 @@ export default function DebugAppwritePage() {
         <button
           onClick={handleTest}
           disabled={loading}
-          className="px-8 py-4 text-lg font-semibold text-white rounded-lg bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+          className="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
         >
           {loading ? "Running Diagnostics..." : "🔍 Run Full Diagnostic"}
         </button>
 
         {results.length > 0 && (
-          <div className="p-6 mt-8 rounded-lg bg-gray-900">
+          <div className="mt-8 rounded-lg bg-gray-900 p-6">
             <h3 className="mb-4 text-lg font-semibold text-white">
               Diagnostic Results:
             </h3>
@@ -100,7 +100,7 @@ export default function DebugAppwritePage() {
           </div>
         )}
 
-        <div className="p-6 mt-8 border rounded-lg border-yellow-500/30 bg-yellow-900/20">
+        <div className="mt-8 rounded-lg border border-yellow-500/30 bg-yellow-900/20 p-6">
           <h3 className="mb-4 text-lg font-semibold text-yellow-400">
             Common Issues & Solutions:
           </h3>

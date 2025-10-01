@@ -29,7 +29,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
               <p className="justify-items-end text-dark-600 xl:text-left">
                 © 2025 BenCare
               </p>
-              <Link href="/privacy" className="text-blue-500 text-sm">
+              <Link href="/privacy" className="text-sm text-blue-500">
                 Privacy Policy
               </Link>
             </div>

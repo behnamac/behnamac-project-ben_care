@@ -55,9 +55,10 @@ export const PatientForm = () => {
         <section className="mb-12 space-y-4">
           <h1 className="header">Hi there 👋</h1>
           <p className="text-dark-700">Get started with appointments.</p>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+          <div className="rounded-lg border border-blue-200 bg-blue-50 p-3">
             <p className="text-sm text-blue-800">
-              🔒 <strong>Secure Platform:</strong> Your information is protected with encryption and security measures.
+              🔒 <strong>Secure Platform:</strong> Your information is protected
+              with encryption and security measures.
             </p>
           </div>
         </section>

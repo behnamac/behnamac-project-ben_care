@@ -19,7 +19,6 @@ A modern, full-stack healthcare patient management system built with Next.js, Pr
 - **Responsive Design**: Mobile-first approach with desktop optimization
 - **Form Validation**: Robust form handling with React Hook Form and Zod
 - **File Upload**: Secure document and image upload capabilities
-- **Error Monitoring**: Integrated Sentry for production error tracking
 
 ## 🚀 Tech Stack
 
@@ -42,7 +41,6 @@ A modern, full-stack healthcare patient management system built with Next.js, Pr
 ### Development & Deployment
 
 - **Vercel** - Hosting and deployment
-- **Sentry** - Error monitoring and performance tracking
 - **ESLint & Prettier** - Code quality and formatting
 
 ## 📋 Prerequisites
@@ -115,8 +113,6 @@ NEXTAUTH_URL="http://localhost:3000"
 # Admin Access
 NEXT_PUBLIC_ADMIN_PASSKEY="your_secure_passkey"
 
-# Error Monitoring (Optional)
-SENTRY_DSN="https://your-sentry-dsn@sentry.io/project-id"
 ```
 
 ## 📊 Database Schema
@@ -217,7 +213,6 @@ Patient (1) ──→ (Many) Appointment
 - **Data Privacy**: HIPAA-compliant data handling
 - **Secure Authentication**: NextAuth.js integration
 - **Input Validation**: Comprehensive form validation with Zod
-- **Error Monitoring**: Production error tracking with Sentry
 - **Admin Protection**: Secure admin access with passkey authentication
 
 ## 🧪 Testing
